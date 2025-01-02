@@ -1,0 +1,5 @@
+Cambiar URL al pasar de a producción:
+                                        pages-login.html 
+                                        login.js linea 26
+                                        login.php linea 115
+                                        

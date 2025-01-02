@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon 
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">-->
+    <title>UMC</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <!-- page css -->
+    <link href="../../css/login-register-lock.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    
+    <!-- You can change the theme colors from here -->
+    <link href="../../css/default-dark.css" id="theme" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">UMC</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(../../assets/images/background/login-register.jpg);">
+            <div class="login-box card" style="width: 60%;">
+                   <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <img src="../assets/img/logo-universidad-miguel-de-cervantes-umc.png" alt="LOGO"><h3 class="box-title m-b-20; text-center"> Registro de Usuario</h3>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                              <input class="form-control" type="text" required="" placeholder="Nombres" id="nombres" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group ">
+                          <div class="col-xs-12">
+                              <input class="form-control" type="text" required="" placeholder="Apellidos" id="apellidos" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                              <input class="form-control" type="text" required="" placeholder="Rut" id="rut" oninput="checkRut(this)" onblur="validaRUT()"  autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                              <input class="form-control" type="hidden" required="" placeholder="Nº Documento" id="num_ducumento" autocomplete="off">
+                       
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                              <input class="form-control" type="email" required="" placeholder="Correo electrónico" id="email" id="email" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group ">
+                          <div class="col-xs-12">
+                              <input class="form-control" type="text" required="" onblur="validaCel()"size="20" placeholder="+56976284353" id="tel_movil" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                    </div>   
+                                
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                            <input class="form-control" type="password" required="" placeholder="Password" id="pass" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group ">
+                          <div class="col-xs-12">
+                            <input class="form-control" type="password" required="" placeholder="Confirm Password" id="pass_rep" autocomplete="off">
+                          </div>
+                      </div>
+                      </div>
+                    </div>          
+
+                    <div class="row">
+                      <div class="col-sm-4"></div>
+                      <div class="col-sm-4">
+                        <div class="form-group text-center p-b-20">
+                          <div class="col-xs-12">
+                              <button class="btn btn-info  waves-light" type="button" onclick="registro();">Registrarme</button>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-4"></div>
+                    </div>
+         
+                                
+                                <div class="form-group m-b-0">
+                                    <div class="col-sm-12 text-center">
+                                        Ya Tengo Cuenta Ir a<a href="pages-login.html" class="text-info m-l-5"><b>Iniciar Sesión</b></a>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+           
+            </section>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/jquery/jquery.min.js"></script>
+    <script src="../assets/js/registro.js"></script>
+    <script src="../../js/test.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/bootstrap/js/popper.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+        // ============================================================== 
+        // Login and Recover Password 
+        // ============================================================== 
+        $('#to-recover').on("click", function() {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+    </script>
+</body>
+
+</html>
