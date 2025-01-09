@@ -67,13 +67,17 @@
             }).then(response => response.json())
               .then(data => {
                 console.log(data);
-                  if (data.success) {
-                      // Redirigir o realizar alguna acción en caso de éxito
-                     // window.location.href = '/dashboard';
-                  } else {
-                      // Manejar el error
-                      alert('Error al iniciar sesión con Google');
-                  }
+              if (data !== false){
+                localStorage.setItem("email", data[0]);
+                location.href="https://matriculate.umc.cl/sgu/MatriculaOnline/IngresoMatriculaOnlineAlumno.php";
+              }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Usuario no registrado',
+
+                });
+              }
               });
         }
 
@@ -112,25 +116,6 @@
                               <img src="../assets/img/logo-universidad-miguel-de-cervantes-umc_sesion.png" alt="LOGO"><h3 class="box-title m-b-20; text-center">Iniciar Sesión</h3>
                             </div>
                           </div>
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Email" id="email"> </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Password" id="pass"> </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-12">
-                                <div class="checkbox checkbox-info pull-left p-t-0">
-                                    
-                                </div> <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Olvide mi contraseña</a> </div>
-                        </div>
-                        <div class="form-group text-center">
-                            <div class="col-xs-12 p-b-20">
-                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="button" onclick="login();">Iniciar</button>
-                            </div>
-                        </div>
                         <!-- Botón de inicio de sesión de Google -->
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
@@ -141,46 +126,6 @@
                                     </div>
                                 </div>
                                 <div id="name"></div>
-                            </div>
-                        </div>
-                        <div class="form-group m-b-0">
-                            <div class="col-sm-12 text-center">
-                            No tengo cuenta<a href="pages-register.html" class="text-info m-l-5"><b>Registrarme</b></a>
-                            </div>
-                        </div>
-                    </form>
-                    <form class="form-horizontal" id="recoverform" action="index.html">
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                      <img src="../assets/img/logo-universidad-miguel-de-cervantes-umc_sesion.png" alt="LOGO"><h3 class="box-title m-b-20; text-center">Recuperar Password</h3>
-                                <p class="text-muted text-center">Escriba su correo y le enviaremos un Password temporal! </p>
-                            </div>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked onclick="mostrarEmail();">
-                            <label class="form-check-label" for="radio1">Email</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" onclick="mostrarRut();">
-                            <label class="form-check-label" for="radio2">Rut</label>
-                          </div>
-                          <br/>
-                        <div class="form-group" id="recuEmail">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Email" id="emailRecupera"> </div>
-                        </div>
-                        <div class="form-group" id="recuRUT">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="RUT" id="RutRecupera"> </div>
-                        </div>
-                        <div class="form-group text-center m-t-20">
-                            <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="button" onclick="recuperarPass();">Enviar</button>
-                            </div>
-                        </div>
-                        <div class="form-group m-b-0">
-                            <div class="col-sm-12 text-center">
-                           Volver al<a href="pages-login.html" class="text-info m-l-5"><b>Login</b></a>
                             </div>
                         </div>
                     </form>
