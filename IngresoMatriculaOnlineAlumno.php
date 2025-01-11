@@ -6,29 +6,29 @@ $fcha = date("Y-m-d");
 
 <head>
 
-    <link rel="stylesheet" href="/sgu/MatriculaOnline/css/mat.css">
+    <link rel="stylesheet" href="/sgu/ReMatriculaOnline/css/mat.css">
     <link rel="stylesheet" href="/sgu/MatriculaOnline/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
     
-    <link href="/sgu/MatriculaOnline/assets/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="/sgu/MatriculaOnline/assets/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="/sgu/MatriculaOnline/assets/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-    <link href="/sgu/MatriculaOnline/js/switchery/dist/switchery.min.css" rel="stylesheet" />
+    <link href="/sgu/ReMatriculaOnline/assets/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sgu/ReMatriculaOnline/assets/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/sgu/ReMatriculaOnline/assets/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="/sgu/ReMatriculaOnline/js/switchery/dist/switchery.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!--<link href="/sgu/MatriculaOnline/css/sgu.css" rel="stylesheet" type="text/css"> -->
+    <!--<link href="/sgu/ReMatriculaOnline/css/sgu.css" rel="stylesheet" type="text/css"> -->
 
-   <!-- <link rel="stylesheet" href="/MatriculaOnline/css/mat.css">
-    <link rel="stylesheet" href="/MatriculaOnline/css/bootstrap.css">
+   <!-- <link rel="stylesheet" href="/ReMatriculaOnline/css/mat.css">
+    <link rel="stylesheet" href="/ReMatriculaOnline/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
     
-    <link href="/MatriculaOnline/assets/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="/MatriculaOnline/assets/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="/MatriculaOnline/assets/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-    <link href="/MatriculaOnline/js/switchery/dist/switchery.min.css" rel="stylesheet" />
+    <link href="/ReMatriculaOnline/assets/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="/ReMatriculaOnline/assets/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/ReMatriculaOnline/assets/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="/ReMatriculaOnline/js/switchery/dist/switchery.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
 
-    <!--<link href="/MatriculaOnline/css/sgu.css" rel="stylesheet" type="text/css"> -->
+    <!--<link href="/ReMatriculaOnline/css/sgu.css" rel="stylesheet" type="text/css"> -->
 </head>
 
 <body>
@@ -46,34 +46,21 @@ $fcha = date("Y-m-d");
     </tr>
     <tr>
  <br>
-    </tr> 
-    <tr>
-      <td class="labelName" colspan="3">
-        Tipo de documentos de Identidad:
-        <br>
-        <select class="filtro form-control" name="ddl_tipoDocumento" id="id_tipoDocumento" onchange="esRut();" style="visibility: visible; width: 33%" value="R" >
-          <option value="0">Seleccione</option>
-            <option value="R" class="1">Rut</option>
-            <option value="P" class="2">Pasaporte</option>
-        </select>
-      </td>
-    </tr>  
+    </tr>   
       <tr>
         <td class="labelName" style="width: 50%" >
           <div class="row">
           <div class="col-xs-12">
           Rut:<br>
-          <input type="text" name="idTxtNRut" align="right" id="idTxtNRut" maxlength="10" class='form-control boton'
-            onkeyup="validarDoc('idTxtNRut');" oninput="checkRut(this)" value="" onblur="insertarPreMatricula()">
+          <input type="text" name="idTxtNRut" align="right" id="idTxtNRut" maxlength="10" class='form-control boton' value="">
           </div>
           </div>
         </td>
  
       <td class="labelName" colspan="2">
         <div id="div_pasaporte" >
-          Pasaporte:<br>
-          <input type="text" name="idTxtPasaporte" align="right" maxlength="50" onkeyup="validarDoc('idTxtPasaporte');" id="idTxtPasaporte"
-            class='form-control boton' value="" value="" onblur="updatePreMatricula()">
+          ID:<br>
+          <input type="text" style="width: 50%" name="idTxtid" align="right" maxlength="50" id="idTxtid" class='form-control boton' disabled>
         </div>
       </td>
     </tr>
@@ -460,21 +447,21 @@ $fcha = date("Y-m-d");
   </div>
 </div>
 
-<script src="/sgu/MatriculaOnline/js/jquery-1.10.1.min.js"></script>
-<script src="/sgu/MatriculaOnline/js/matricula.js"></script>
-<script src="/sgu/MatriculaOnline/js/test.js"></script>
-<script src="/sgu/MatriculaOnline/js/switchery/dist/switchery.min.js"></script>
-<script src="/sgu/MatriculaOnline/assets/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-<script src="/sgu/MatriculaOnline/js/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="/sgu/MatriculaOnline/assets/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="/sgu/ReMatriculaOnline/js/jquery-1.10.1.min.js"></script>
+<script src="/sgu/ReMatriculaOnline/js/matricula.js"></script>
+<script src="/sgu/ReMatriculaOnline/js/test.js"></script>
+<script src="/sgu/ReMatriculaOnline/js/switchery/dist/switchery.min.js"></script>
+<script src="/sgu/ReMatriculaOnline/assets/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+<script src="/sgu/ReMatriculaOnline/js/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="/sgu/ReMatriculaOnline/assets/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!--<script src="/MatriculaOnline/js/jquery-1.10.1.min.js"></script>
-<script src="/MatriculaOnline/js/matricula.js"></script>
-<script src="/MatriculaOnline/js/test.js"></script>
-<script src="/MatriculaOnline/js/switchery/dist/switchery.min.js"></script>
-<script src="/MatriculaOnline/assets/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-<script src="/MatriculaOnline/js/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="/MatriculaOnline/assets/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>-->
+<!--<script src="/ReMatriculaOnline/js/jquery-1.10.1.min.js"></script>
+<script src="/ReMatriculaOnline/js/matricula.js"></script>
+<script src="/ReMatriculaOnline/js/test.js"></script>
+<script src="/ReMatriculaOnline/js/switchery/dist/switchery.min.js"></script>
+<script src="/ReMatriculaOnline/assets/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+<script src="/ReMatriculaOnline/js/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="/ReMatriculaOnline/assets/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>-->

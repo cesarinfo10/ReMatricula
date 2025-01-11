@@ -11,12 +11,13 @@ if (isset($_GET['getOnePreCarga'])){
 
   $email = $_GET['email'];
 
-  $query_pap = "SELECT * FROM public.pap where email = '".$email."'";
+  $query_pap = "SELECT * FROM public.alumnos where email = '".$email."'";
   $result_pap = pg_query($query_pap) or die('La consulta fallo: ' . pg_last_error());
   $row_pap = pg_fetch_row($result_pap);
-  $rows_pap = pg_num_rows($result_pap);
+  //$rows_pap = pg_num_rows($result_pap);
 
-if ($rows_pap == 0){
+  echo json_encode($row_pap);
+/*if ($rows_pap == 0){
     $query = "SELECT * FROM public.precarga_usuario_matricula where email = '".$email."'";
     $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
     $row = pg_fetch_row($result);
@@ -41,7 +42,7 @@ if ($rows_pap == 0){
     array_push($row_pap, $row_pag[0]);//IDPAGARE
     }
     echo json_encode($row_pap);
-   }
+   }*/
 }
 
 

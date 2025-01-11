@@ -16,12 +16,12 @@ $(document).ready(function(){
   //location.href="https://matriculate.umc.cl/sgu/MatriculaOnline/";
   }
   precarga();
-  llamarPais();
+  /*llamarPais();
   llamarAdmision();
   llamarInstitucion();
   llamarcomunas();
   llamarRegiones();
-  llamarBecas();
+  llamarBecas();*/
   //validarFCH();
   
   $('#modalOtros').hide();
@@ -68,92 +68,20 @@ function precarga(){
     data:"email="+email,
     success:function(data){
 
-     console.log(data)
-     if($("#idTxtNRut").val() != '' || $("#idTxtNRut").val() != null)
-     {
-      $("#id_tipoDocumento").val('R');
-      document.getElementById("div_pasaporte").style.display="none";  
-     }
-    if(data[77]=="pap" && data[77]!=undefined){
-      if(data[78]!='' || data[78] != null ||  data[78] != undefined){
-        localStorage.setItem("idContrato", data[78]);
-      }
-      
-      if(data[79]!='' || data[79] != null ||  data[79] != undefined){
-        localStorage.setItem("idPagare", data[79]);
-      }
+     console.log(data);
 
-      if (localStorage.getItem('idContrato') =='' ||localStorage.getItem('idContrato') == 'null' || localStorage.getItem('idContrato') == undefined){
-        $('#contratoDes').hide();
-        $('#contratoPagareDes').hide();
-        $('#tblDeclaro').show();
-      }else{
-        $('#contratoDes').show();
-        $('#contratoPagareDes').show();
-        $('#tblDeclaro').hide();
-      }
 
-      if (localStorage.getItem('idPagare') == ''||localStorage.getItem('idPagare') == 'null' || localStorage.getItem('idPagare') == undefined){
-        $('#pagareImpde').hide();
-      }else{
-        $('#pagareImpde').show();
-      }
-    
-      $('#modalDescarga').click();
-      if (localStorage.getItem('idMatricula') == ''||localStorage.getItem('idMatricula') == 'null' || localStorage.getItem('idMatricula') == undefined){
-      localStorage.setItem("idMatricula", (data[0].trim()));
-      }
-      $("#idTxtNRut").val(data[1].trim());
-      $("#idTxtNDocumento").val(data[0].trim());
-      $("#texto_nombre").val(data[2].trim());
-      localStorage.setItem("nombre", data[2].trim());
-      $("#texto_apellidos").val(data[3].trim());
-      localStorage.setItem("apellido", data[3].trim());
-      $("#texto_email").val(data[11].trim());
-      $("#texto_celular").val(data[13].trim());
-      $("#texto_fnacimiento").val(data[5].trim());
-    //  localStorage.setItem("fnacimiento", data[5].trim());
-      $("#ddl_estadoCivil").val(data[42].trim());
-      $("#ddl_genero").val(data[4].trim());
-      $("#ddl_pais").val(data[6].trim());
-      $("#texto_direccion").val(data[8].trim());
-      $("#jornada").val(data[43].trim());
-      $("#jornada").val(data[43].trim());
-      llamarProgCarrera(data[43]);
-     //ddl_beca
-      setTimeout(() => {    
-      $("#ddl_regiones").val(data[10].trim());
-      $("#ddl_comunas").val(data[9].trim());
-      $("#ddl_viaAdmision").val(data[22].trim());
-      $("#ddl_carrera").val(data[19].trim());
-      $("#ddl_beca").val(data[36]);
-      mostraSaldo();
-      llamarOfertaMatricula();
-      
-     
-      }, "1000");   
-      setTimeout(() => {    
-        bloqeuoData();
-        llamarTableDoc();
-        }, "2000");     
-
-        $('#tblArchivos').show();
-       // $('#tblPagos').show();
-        $('#idAvisoCon').show();
-
-      //  validaRUT();
-      
-    }else{
     $("#idTxtNRut").val(data[1].trim());
+    $("#idTxtid").val(data[0].trim());
      $("#idTxtNDocumento").val(data[2].trim());
-     $("#texto_nombre").val(data[4].trim());
-     localStorage.setItem("nombre", data[4].trim());
-     $("#texto_apellidos").val(data[5].trim());
+     $("#texto_nombre").val(data[2].trim());
+     localStorage.setItem("nombre", data[3].trim());
+     $("#texto_apellidos").val(data[3].trim());
      localStorage.setItem("apellido", data[5].trim());
      $("#texto_email").val(data[6].trim());
      $("#texto_celular").val(data[7].trim());
      bloqeuoDataSesion();
-    }
+    
  
   }
 })
