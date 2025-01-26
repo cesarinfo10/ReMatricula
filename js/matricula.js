@@ -70,7 +70,7 @@ function precarga(){
 
      console.log(data);
 
-
+     texto_dir
     $("#idTxtNRut").val(data[1].trim());
     $("#idTxtid").val(data[0].trim());
      $("#idTxtNDocumento").val(data[2].trim());
@@ -78,8 +78,7 @@ function precarga(){
      localStorage.setItem("nombre", data[3].trim());
      $("#texto_apellidos").val(data[3].trim());
      localStorage.setItem("apellido", data[5].trim());
-     $("#texto_email").val(data[6].trim());
-     $("#texto_celular").val(data[7].trim());
+     $("#texto_dir").val(data[8].trim());
      bloqeuoDataSesion();
     
  
@@ -137,10 +136,7 @@ function bloqeuoDataSesion(){
   $("#idTxtNDocumento").prop('disabled', true);
   $("#texto_nombre").prop('disabled', true);
   $("#texto_apellidos").prop('disabled', true);
-  $("#texto_email").prop('disabled', true);
-  $("#texto_celular").prop('disabled', true);
-
-  
+  $("#texto_email").prop('disabled', true); 
 
 }
 function mostrarDoc(i){
@@ -819,66 +815,7 @@ $.ajax({
 
         });
 }
-/*=============================================
-UPDATE PRE MATRICULAS
-=============================================*/
-function updatePreMatricula(){
- 
-  let carreras = 0
-  let regimens = 'Sin Datos'
 
-  let rut = $("#idTxtNRut").val();
-  let pasaporte = $("#idTxtPasaporte").val();
-  let NDocumento = $("#idTxtNDocumento").val();
-  let nombre = $("#texto_nombre").val();
-  let apellido = $("#texto_apellidos").val();
-  let email = $("#texto_email").val();
-  let tel_movil = $("#texto_celular").val();  
-  let fnacimiento = $("#texto_fnacimiento").val();
-  let estadoCivil = $("#ddl_estadoCivil").val();
-  let genero = $("#ddl_genero").val();
-  let pais = $("#ddl_pais").val();
-  let direccion = $("#texto_direccion").val();
-  let comunas = $("#ddl_comunas").val();
-  let regiones = $("#ddl_regiones").val();
-  let viaAdmision = $("#ddl_viaAdmision").val();
-  let convalidante = $("#ddl_convalidante").val();
-  let id_jornada = $("#jornada").val();
-  let carrera = $("#ddl_carrera").val();
-  let modalidad1_post = $("#texto_modalidad").val();
-  let regimen = $("#ddl_carrera option:selected").attr("regimenID");;
-
-  if (carrera === undefined) {
-    carreras = 0;
-  }else{
-    carreras = carrera;
-  }
-  if (regimen === undefined) {
-    regimens = 'Sin Datos';
-  }else{
-    regimens = regimen;
-  }
-
-  let dataString = 'rut='+rut+'&pasaporte='+pasaporte+'&NDocumento='+NDocumento
-                    +'&nombre='+nombre+'&apellido='+apellido+'&email='+email 
-                    +'&tel_movil='+tel_movil+'&fnacimiento='+fnacimiento+'&estadoCivil='+estadoCivil
-                    +'&genero='+genero+'&pais='+pais+'&direccion='+direccion +'&comunas='+ comunas +'&regiones='+regiones 
-                    +'&viaAdmision='+viaAdmision +'&convalidante='+convalidante+'&id_jornada='+id_jornada 
-                    +'&carrera='+carreras + '&modalidad1_post='+modalidad1_post + '&regimen='+regimens;
-
-
-$.ajax({
-            type: "POST",
-            url: "function/funcionUpdate.php?postUpdatePrecarga",
-            data: dataString,
-            success: function(data) {
-              console.log(data);               
-            }
-
-        });
-
-        console.log('descomentar');
-}
 /*=============================================
 finalizar carga
 =============================================*/

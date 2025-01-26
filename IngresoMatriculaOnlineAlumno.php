@@ -70,12 +70,12 @@ $fcha = date("Y-m-d");
       <td class="labelName">
         Nombres:<br>
         <input type="text" name="texto_nombre" align="right" value="" maxlength="50" id="texto_nombre" class='form-control boton' 
-          value="" onblur="updatePreMatricula()">
+          value="">
       </td>
       <td class="labelName">
         Apellidos:<br>
         <input type="text" name="texto_apellidos" align="right" value="" maxlength="50" id="texto_apellidos" 
-          class='form-control boton' onblur="updatePreMatricula()">
+          class='form-control boton' value="">
       </td>
     </tr>
     </table>
@@ -83,24 +83,25 @@ $fcha = date("Y-m-d");
  <table cellpadding="3" class="table table-bordered" border="0" align="center"  cellspacing="2" width="800px">
     <tr>
       <td class="labelName">
-        Correo electrónico:<br>
-        <input type="mail" name="texto_email" align="right" value="" maxlength="50" id="texto_email" 
-        class='form-control boton' onblur="updatePreMatricula()">
-      </td>
-       <td class="labelName">
-        Teléfono celular:<br>
-        <input type="text" name="texto_celular" align="right" value=""maxlength="15" id="texto_celular" 
-        class='form-control boton' onblur="updatePreMatricula()">
-      </td>
-      <td class="labelName">
-        Fecha de nacimiento:<br>
-        <input type="date" class="form-control boton"  name="texto_fnacimiento" align="right" value="<?php echo $fcha; ?>" 
-        size="30" id="texto_fnacimiento" class='boton' onblur="validarFCH()">
-      </td>
+        Dirección: <br>
+        <input type="text" name="texto_dir" align="right" value="" maxlength="200" id="texto_dir" 
+        class='form-control boton'>
+</td>
       </tr>
       </table>
 
       <table cellpadding="3" class="table table-bordered" border="0" align="center" cellspacing="2" width="800px">
+      <tr>
+      <th align="center" colspan="3" class="Titulo2" width="100%"><h5 class="text-center">Carrera que se Matricula</h5>
+      </th>
+    </tr>
+    <tr>
+      <td class="labelName" colspan="3">
+        Carreara: <br>
+        <input type="text"  name="" align="right" value="" maxlength="200" id="" 
+        class='form-control boton'>
+</td>
+      </tr>
       <tr>
       <td class="labelName" style="width: 33.4%">
         Estado Civil: <br>
